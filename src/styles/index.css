@@ -1,0 +1,68 @@
+/* src/styles/index.css */
+
+/* Establecer un fondo claro para la aplicación */
+body {
+    font-family: Arial, sans-serif;
+    /* Establecer la tipografía global */
+    background-color: #f5f5f5;
+    /* Fondo suave para la página */
+    margin: 0;
+    /* Eliminar márgenes por defecto */
+    padding: 0;
+    /* Eliminar rellenos por defecto */
+}
+
+/* Hacer que todos los textos dentro de la app tengan un color estándar */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333;
+    /* Color de texto gris oscuro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustar el tamaño de los elementos de texto */
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Asegurarse de que el contenedor principal ocupe toda la pantalla */
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Estilo básico para los botones en toda la aplicación */
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para las imágenes (asegurarse de que las imágenes sean responsivas) */
+img {
+    max-width: 100%;
+    height: auto;
+}

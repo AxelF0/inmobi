@@ -1,0 +1,117 @@
+.marketplace-container {
+  max-width: 1450px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  /* Quita el fondo y el borde */
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+.marketplace-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+
+.marketplace-filters select,
+.marketplace-filters input {
+  padding: 10px 18px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  background: #fafafa;
+  width: 180px; /* Mismo ancho para todos los filtros */
+  box-sizing: border-box;
+}
+
+.marketplace-search {
+  flex: 1;
+  max-width: 500px;
+}
+
+.marketplace-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.marketplace-card {
+  display: flex;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.marketplace-card-img {
+  background: #ddd;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketplace-card-img img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.marketplace-card-info {
+  flex: 1;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.marketplace-card-row {
+  display: flex;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.marketplace-card-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.marketplace-card-ubicacion {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.marketplace-card-icons {
+  display: flex;
+  gap: 18px;
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.marketplace-card-footer,
+.marketplace-card-footer-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 6px;
+}
+
+.marketplace-card-footer {
+  color: #333;
+}
+
+.marketplace-card-footer-values {
+  color: #13706d;
+  font-weight: 600;
+}

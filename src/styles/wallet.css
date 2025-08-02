@@ -1,0 +1,182 @@
+.wallet-mockup-container,
+.marketplace-container {
+    max-width: 1200px; /* o el ancho que prefieras */
+    width: 100%;
+    margin: 40px auto;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #fff;
+    padding: 0 0 40px 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Elimina min-width y max-width: auto */
+}
+
+.wallet-balance-card {
+    margin: 40px auto 24px auto;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 32px;
+    max-width: 1000px;
+    padding: 40px 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wallet-balance-amount {
+    font-size: 56px;
+    font-weight: 400;
+    color: #333;
+}
+
+.wallet-balance-address {
+    font-size: 22px;
+    color: #555;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+.wallet-actions-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 24px 0 0 0;
+}
+
+.wallet-action-btn {
+    background: #13706d;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 16px 36px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.wallet-action-btn:hover {
+    background: #0e5755;
+}
+
+.wallet-tabs-row {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0 0 0;
+    border-bottom: 2px solid #333;
+}
+
+.wallet-tab-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    color: #333;
+    padding: 8px 0 8px 0;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    transition: border 0.2s, color 0.2s;
+}
+
+.wallet-tab-btn.active {
+    border-bottom: 4px solid #13706d;
+    color: #13706d;
+}
+
+.wallet-table-container {
+    margin: 0 32px;
+}
+
+.wallet-table-header,
+.wallet-table-row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    font-size: 22px;
+    padding: 18px 0;
+}
+
+.wallet-table-header {
+    font-weight: 600;
+    border-bottom: 2px solid #333;
+    background: #fff;
+}
+
+.wallet-table-row {
+    font-weight: 400;
+    background: #fff;
+}
+
+.wallet-table-col.propiedad {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.wallet-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background: #fff;
+    margin-right: 10px;
+    display: inline-block;
+    overflow: hidden;
+    /* Asegura que la imagen no se salga del círculo */
+}
+
+.wallet-table-sub {
+    font-size: 16px;
+    color: #555;
+    margin-top: 2px;
+}
+
+.wallet-table-date {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Agrega esto a tu wallet.css */
+.wallet-token-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding: 28px 0;
+    font-size: 24px;
+}
+
+.wallet-token-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.wallet-token-name {
+    font-size: 26px;
+    font-weight: 400;
+    color: #333;
+}
+
+.wallet-token-porcentaje {
+    font-size: 18px;
+    color: #555;
+    margin-top: 6px;
+}
+
+.wallet-token-right {
+    text-align: right;
+}
+
+.wallet-token-usd {
+    font-size: 26px;
+    color: #333;
+    font-weight: 400;
+}
+
+.wallet-token-accion {
+    font-size: 18px;
+    color: #555;
+    margin-top: 6px;
+}
