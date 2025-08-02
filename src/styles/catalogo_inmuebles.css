@@ -3,7 +3,6 @@
   margin: 40px auto;
   padding: 0 20px;
   font-family: 'Segoe UI', Arial, sans-serif;
-  /* Quita el fondo y el borde */
   background: none;
   border: none;
   border-radius: 0;
@@ -23,7 +22,7 @@
   border: 1px solid #ccc;
   border-radius: 7px;
   background: #fafafa;
-  width: 180px; /* Mismo ancho para todos los filtros */
+  width: 180px;
   box-sizing: border-box;
 }
 

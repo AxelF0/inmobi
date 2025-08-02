@@ -82,7 +82,11 @@ const properties = [
     },
 ];
 
-const Marketplace = () => {
+const Marketplace = ({ onPropertySelect }) => {
+    const handleCardClick = (property) => {
+        onPropertySelect(property);
+    };
+
     return (
         <div className="marketplace-container">
             <div className="marketplace-filters">
@@ -95,7 +99,12 @@ const Marketplace = () => {
             </div>
             <div className="marketplace-grid">
                 {properties.map((prop) => (
-                    <div className="marketplace-card" key={prop.id}>
+                    <div
+                        className="marketplace-card"
+                        key={prop.id}
+                        onClick={() => handleCardClick(prop)}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <div className="marketplace-card-img">
                             <img src={prop.img} alt="Propiedad" />
                         </div>

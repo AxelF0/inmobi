@@ -4,7 +4,6 @@ import '../styles/wallet.css';
 const Wallet = () => {
   const [activeTab, setActiveTab] = useState('tokens');
 
-  // Datos de ejemplo
   const walletAddress = '0sad2sa...asdawd2';
   const balance = 0.0;
   const tokens = [
@@ -65,13 +64,6 @@ const Wallet = () => {
       <div className="wallet-balance-card">
         <div className="wallet-balance-amount">${balance.toFixed(2)}USD</div>
         <div className="wallet-balance-address">{walletAddress}</div>
-      </div>
-
-      <div className="wallet-actions-row">
-        <button className="wallet-action-btn">Comprar</button>
-        <button className="wallet-action-btn">Vender</button>
-        <button className="wallet-action-btn">Retirar</button>
-        <button className="wallet-action-btn">Depositar</button>
       </div>
 
       <div className="wallet-tabs-row">

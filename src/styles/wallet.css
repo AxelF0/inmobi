@@ -1,6 +1,6 @@
 .wallet-mockup-container,
 .marketplace-container {
-    max-width: 1200px; /* o el ancho que prefieras */
+    max-width: 1200px; 
     width: 100%;
     margin: 40px auto;
     border: 2px solid #333;
@@ -8,7 +8,6 @@
     background: #fff;
     padding: 0 0 40px 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    /* Elimina min-width y max-width: auto */
 }
 
 .wallet-balance-card {
@@ -41,22 +40,6 @@
     justify-content: center;
     gap: 32px;
     margin: 24px 0 0 0;
-}
-
-.wallet-action-btn {
-    background: #13706d;
-    color: #fff;
-    border: none;
-    border-radius: 7px;
-    padding: 16px 36px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.wallet-action-btn:hover {
-    background: #0e5755;
 }
 
 .wallet-tabs-row {
@@ -123,7 +106,6 @@
     margin-right: 10px;
     display: inline-block;
     overflow: hidden;
-    /* Asegura que la imagen no se salga del círculo */
 }
 
 .wallet-table-sub {
@@ -137,7 +119,6 @@
     color: #888;
 }
 
-/* Agrega esto a tu wallet.css */
 .wallet-token-row {
     display: flex;
     justify-content: space-between;
