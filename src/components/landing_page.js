@@ -89,19 +89,6 @@ const LandingPage = ({ onStartInvesting, setCurrentView }) => {
 
     return (
         <div className="landing-page">
-            {/* Header integrado para la landing */}
-            <header className="landing-header">
-                <div className="landing-header-container">
-                    <div className="landing-logo">InmobiChain</div>
-                    <nav className="landing-nav">
-                        <button onClick={() => setCurrentView('catalogo')}>Propiedades</button>
-                        <button onClick={() => setCurrentView('mercado-p2p')}>Mercado P2P</button>
-                        <button onClick={() => setCurrentView('wallet')}>Wallet</button>
-                        <button className="nav-cta" onClick={onStartInvesting}>Empezar</button>
-                    </nav>
-                </div>
-            </header>
-
             {/* Hero Section */}
             <section className="hero-section">
                 <div className="hero-container">

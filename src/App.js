@@ -32,8 +32,8 @@ function App() {
         return <Marketplace onPropertySelect={handlePropertySelect} />;
       case 'propertyDetails':
         return (
-          <PropertyDetails 
-            property={selectedProperty} 
+          <PropertyDetails
+            property={selectedProperty}
             onBack={handleBackToCatalog}
           />
         );
@@ -46,11 +46,9 @@ function App() {
     }
   };
 
-  const showHeader = currentView !== 'landing';
-
   return (
     <>
-      {showHeader && <Header currentView={currentView} setCurrentView={setCurrentView} />}
+      <Header currentView={currentView} setCurrentView={setCurrentView} />
       {renderCurrentView()}
     </>
   );

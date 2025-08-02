@@ -1,44 +1,122 @@
+/* Variables CSS para consistencia */
+:root {
+    --primary-color: #13706d;
+    --primary-dark: #0f5a57;
+    --primary-light: #1a8a86;
+    --accent-color: #f39c12;
+    --success-color: #27ae60;
+    --background-light: #f8f9fa;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 .main-header {
-  width: 100%;
-  background: #fff;
-  border-bottom: 2px solid #13706d;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  height: 70px;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid rgba(19, 112, 109, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 80px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-soft);
 }
 
 .main-header-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #13706d;
-  letter-spacing: 2px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .main-header-nav {
-  display: flex;
-  gap: 18px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
 .main-header-btn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  color: #333;
-  font-weight: 500;
-  padding: 8px 24px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+    background: transparent;
+    border: 2px solid transparent;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.main-header-btn.active,
 .main-header-btn:hover {
-  background: #13706d;
-  color: #fff;
+    background: var(--background-light);
+    color: var(--primary-color);
+    border-color: rgba(19, 112, 109, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(19, 112, 109, 0.1);
+}
+
+.main-header-btn.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(19, 112, 109, 0.3);
+}
+
+.main-header-btn.active:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    box-shadow: 0 6px 20px rgba(19, 112, 109, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .main-header {
+        padding: 0 30px;
+        height: 70px;
+    }
+    
+    .main-header-title {
+        font-size: 1.8rem;
+    }
+    
+    .main-header-nav {
+        gap: 20px;
+    }
+    
+    .main-header-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .main-header-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .main-header-btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
 }

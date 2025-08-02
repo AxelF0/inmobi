@@ -6,6 +6,12 @@ const Header = ({ currentView, setCurrentView }) => (
     <div className="main-header-title">InmobiChain</div>
     <nav className="main-header-nav">
       <button
+        className={`main-header-btn${currentView === 'landing' ? ' active' : ''}`}
+        onClick={() => setCurrentView('landing')}
+      >
+        Inicio
+      </button>
+      <button
         className={`main-header-btn${currentView === 'catalogo' ? ' active' : ''}`}
         onClick={() => setCurrentView('catalogo')}
       >
