@@ -1,0 +1,513 @@
+.mercado-p2p-container {
+  max-width: 1450px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.mercado-p2p-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mercado-p2p-header h1 {
+  font-size: 32px;
+  color: #333;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.mercado-p2p-header p {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+/* Advertencia de Seguridad */
+.security-warning {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #13706d;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.warning-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.warning-content h3 {
+  font-size: 20px;
+  color: #13706d;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.warning-content p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tabs */
+.mercado-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+  padding: 15px 30px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  background: #13706d;
+  color: white;
+}
+
+.tab-btn:hover:not(.active) {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Sección de Comprar */
+.comprar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Filtros */
+.filtros-section {
+  background: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.filtros-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.filtro-item label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.filtro-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #13706d;
+}
+
+.filtro-item select {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  min-width: 200px;
+}
+
+/* Grid de Ofertas */
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 25px;
+}
+
+.oferta-card {
+  background: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.oferta-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.oferta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.vendedor-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vendedor-nombre {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.verificado-badge {
+  background: #28a745;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.fecha-publicacion {
+  font-size: 14px;
+  color: #666;
+}
+
+.oferta-content {
+  margin-bottom: 20px;
+}
+
+.propiedad-info {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.propiedad-imagen {
+  width: 80px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.propiedad-detalles h4 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.tokens-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cantidad-tokens {
+  font-size: 16px;
+  color: #13706d;
+  font-weight: 600;
+}
+
+.precio-unitario {
+  font-size: 14px;
+  color: #666;
+}
+
+.precio-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.precio-label {
+  font-size: 16px;
+  color: #666;
+}
+
+.precio-valor {
+  font-size: 20px;
+  font-weight: 600;
+  color: #13706d;
+}
+
+.oferta-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-comprar {
+  flex: 1;
+  padding: 12px;
+  background: #13706d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-comprar:hover {
+  background: #0f5a57;
+}
+
+.btn-contactar {
+  flex: 1;
+  padding: 12px;
+  background: white;
+  color: #13706d;
+  border: 2px solid #13706d;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-contactar:hover {
+  background: #13706d;
+  color: white;
+}
+
+/* Sección de Vender */
+.vender-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vender-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.vender-header h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.vender-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.form-venta {
+  background: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #13706d;
+  background: white;
+}
+
+.form-group small {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.total-group {
+  grid-column: span 2;
+}
+
+.total-display {
+  padding: 12px 16px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #13706d;
+  background: #f8f9fa;
+  border: 2px solid #13706d;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.descripcion-group {
+  grid-column: span 2;
+}
+
+.descripcion-group textarea {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.descripcion-group textarea:focus {
+  outline: none;
+  border-color: #13706d;
+  background: white;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-publicar {
+  padding: 15px 30px;
+  background: #13706d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-publicar:hover {
+  background: #0f5a57;
+}
+
+.btn-preview {
+  padding: 15px 30px;
+  background: white;
+  color: #13706d;
+  border: 2px solid #13706d;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-preview:hover {
+  background: #13706d;
+  color: white;
+}
+
+/* Información de venta */
+.info-venta {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+}
+
+.info-venta h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+}
+
+.info-venta ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-venta li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .ofertas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mercado-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-btn {
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+  
+  .filtros-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .total-group,
+  .descripcion-group {
+    grid-column: span 1;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .oferta-actions {
+    flex-direction: column;
+  }
+  
+  .propiedad-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .propiedad-imagen {
+    align-self: center;
+  }
+}

@@ -66,6 +66,13 @@ const Wallet = () => {
         <div className="wallet-balance-address">{walletAddress}</div>
       </div>
 
+      <div className="wallet-actions-row">
+        <button className="wallet-action-btn">Comprar</button>
+        <button className="wallet-action-btn">Vender</button>
+        <button className="wallet-action-btn">Retirar</button>
+        <button className="wallet-action-btn">Depositar</button>
+      </div>
+
       <div className="wallet-tabs-row">
         <div
           className={`wallet-tab-btn${activeTab === 'tokens' ? ' active' : ''}`}

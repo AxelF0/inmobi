@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Header from './components/header';
+import LandingPage from './components/landing_page';
 import Wallet from './components/wallet';
 import Marketplace from './components/catalogo_inmuebles';
 import PropertyDetails from './components/property_details';
+import MercadoP2P from './components/mercado_p2p';
 
 function App() {
-  const [currentView, setCurrentView] = useState('catalogo');
+  const [currentView, setCurrentView] = useState('landing');
   const [selectedProperty, setSelectedProperty] = useState(null);
 
   const handlePropertySelect = (property) => {
@@ -18,8 +20,14 @@ function App() {
     setCurrentView('catalogo');
   };
 
+  const handleStartInvesting = () => {
+    setCurrentView('catalogo');
+  };
+
   const renderCurrentView = () => {
     switch (currentView) {
+      case 'landing':
+        return <LandingPage onStartInvesting={handleStartInvesting} setCurrentView={setCurrentView} />;
       case 'catalogo':
         return <Marketplace onPropertySelect={handlePropertySelect} />;
       case 'propertyDetails':
@@ -29,16 +37,20 @@ function App() {
             onBack={handleBackToCatalog}
           />
         );
+      case 'mercado-p2p':
+        return <MercadoP2P />;
       case 'wallet':
         return <Wallet />;
       default:
-        return <Marketplace onPropertySelect={handlePropertySelect} />;
+        return <LandingPage onStartInvesting={handleStartInvesting} />;
     }
   };
 
+  const showHeader = currentView !== 'landing';
+
   return (
     <>
-      <Header currentView={currentView} setCurrentView={setCurrentView} />
+      {showHeader && <Header currentView={currentView} setCurrentView={setCurrentView} />}
       {renderCurrentView()}
     </>
   );

@@ -12,6 +12,12 @@ const Header = ({ currentView, setCurrentView }) => (
         Catálogo
       </button>
       <button
+        className={`main-header-btn${currentView === 'mercado-p2p' ? ' active' : ''}`}
+        onClick={() => setCurrentView('mercado-p2p')}
+      >
+        Mercado P2P
+      </button>
+      <button
         className={`main-header-btn${currentView === 'wallet' ? ' active' : ''}`}
         onClick={() => setCurrentView('wallet')}
       >
