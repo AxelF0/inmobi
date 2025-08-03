@@ -161,3 +161,31 @@
     color: #555;
     margin-top: 6px;
 }
+
+/* Agrega esto a src/styles/wallet.css */
+.wallet-connect-btn {
+  background-color: #21735c;
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 8px;
+  border: 2px solid #21735c;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+.wallet-connect-btn:hover,
+.wallet-connect-btn:focus {
+  background-color: #fff;
+  color: #21735c;
+  border: 2px solid #21735c;
+  outline: none;
+}
+
+.wallet-connect-btn:active {
+  background-color: #21735c;
+  color: #fff;
+}
