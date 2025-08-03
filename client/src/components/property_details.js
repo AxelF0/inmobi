@@ -15,7 +15,6 @@ const usdcABI = [
 ];
 
 const PropertyDetails = ({ property, onBack }) => {
-  4;
   const [capitalRequired, setCapitalRequired] = useState("0");
   const [totalInvested, setTotalInvested] = useState("0");
   const [investmentAmount, setInvestmentAmount] = useState("");
