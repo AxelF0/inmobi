@@ -1,5 +1,8 @@
+// wallet.js (con diseño y colores mejorados)
 import React, { useState, useEffect } from 'react';
 import '../styles/wallet.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWallet, faCoins, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Wallet = () => {
   const [activeTab, setActiveTab] = useState('tokens');
@@ -39,7 +42,7 @@ const Wallet = () => {
         }
       });
     }
-    
+
     return () => {
       if (window.ethereum && window.ethereum.removeListener) {
         window.ethereum.removeListener('accountsChanged', () => {});
@@ -64,151 +67,133 @@ const Wallet = () => {
   };
 
   const tokens = [
-    {
-      id: '#123456',
-      name: 'Propiedad 1',
-      img: 'https://via.placeholder.com/56',
-      porcentaje: '12%',
-      usd: 0.0,
-      accion: 'tota de accion',
-    },
-    {
-      id: '#234567',
-      name: 'Propiedad 2',
-      img: 'https://via.placeholder.com/56',
-      porcentaje: '8%',
-      usd: 0.0,
-      accion: 'tota de accion',
-    },
-    {
-      id: '#345678',
-      name: 'Propiedad 3',
-      img: 'https://via.placeholder.com/56',
-      porcentaje: '5%',
-      usd: 0.0,
-      accion: 'tota de accion',
-    },
+    { id: '#123456', name: 'Propiedad 1', img: 'https://via.placeholder.com/56', porcentaje: '12%', usd: 0.0, accion: 'tota de accion' },
+    { id: '#234567', name: 'Propiedad 2', img: 'https://via.placeholder.com/56', porcentaje: '8%', usd: 0.0, accion: 'tota de accion' },
+    { id: '#345678', name: 'Propiedad 3', img: 'https://via.placeholder.com/56', porcentaje: '5%', usd: 0.0, accion: 'tota de accion' },
   ];
+
   const properties = [
-    {
-      id: '#123456',
-      name: 'Propiedad 1',
-      date: '01/01/2025',
-      price: '$2000',
-      type: 'Compra',
-      status: 'Completado',
-    },
-    {
-      id: '#234567',
-      name: 'Propiedad 2',
-      date: '02/02/2025',
-      price: '$1500',
-      type: 'Venta',
-      status: 'En proceso',
-    },
-    {
-      id: '#345678',
-      name: 'Propiedad 3',
-      date: '03/03/2025',
-      price: '$2500',
-      type: 'Compra',
-      status: 'Cancelado',
-    },
+    { id: '#123456', name: 'Propiedad 1', date: '01/01/2025', price: '$2000', type: 'Compra', status: 'Completado' },
+    { id: '#234567', name: 'Propiedad 2', date: '02/02/2025', price: '$1500', type: 'Venta', status: 'En proceso' },
+    { id: '#345678', name: 'Propiedad 3', date: '03/03/2025', price: '$2500', type: 'Compra', status: 'Cancelado' },
   ];
 
   return (
-    <div className="wallet-mockup-container">
-      <div className="wallet-balance-card">
-        {!account ? (
-          <button
-            className="wallet-connect-btn"
-            onClick={connectWallet}
-            disabled={isConnecting}
-          >
-            {isConnecting ? 'Conectando...' : 'Connect Wallet'}
-          </button>
-        ) : (
-          <>
-            <div className="wallet-balance-amount">${balance.toFixed(2)}USD</div>
-            <div className="wallet-balance-address">{formatAccount(account)}</div>
-          </>
-        )}
+    <div className="wallet-container">
+      <div className="wallet-header">
+        <h1 className="wallet-title"><FontAwesomeIcon icon={faWallet} /> Mi Billetera</h1>
+        <p className="wallet-subtitle">Administra tus tokens de inversión de forma segura</p>
       </div>
 
-      {account && (
-        <>
-          <div className="wallet-tabs-row">
-            <div
-              className={`wallet-tab-btn${activeTab === 'tokens' ? ' active' : ''}`}
-              onClick={() => setActiveTab('tokens')}
-            >
-              Tokens
+      {!account ? (
+        <div className="wallet-connect-section">
+          <div className="connect-card">
+            <div className="connect-icon">
+              <FontAwesomeIcon icon={faWallet} size="3x" color="#144b28" />
             </div>
-            <div
-              className={`wallet-tab-btn${activeTab === 'activity' ? ' active' : ''}`}
-              onClick={() => setActiveTab('activity')}
-            >
-              Actividad
+            <h2>Conecta tu Wallet</h2>
+            <p>Para visualizar tus inversiones y realizar transacciones, por favor conecta tu wallet compatible con Ethereum como MetaMask.</p>
+            <button className="wallet-connect-btn" onClick={connectWallet} disabled={isConnecting}>
+              {isConnecting ? 'Conectando...' : 'Conectar Wallet'}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="wallet-balance-section">
+            <div className="balance-card">
+              <div className="balance-header">
+                <div className="balance-info">
+                  <span className="balance-label">Saldo total</span>
+                  <span className="balance-amount">${balance.toFixed(2)} USD</span>
+                  <span className="balance-change positive">+0.00% hoy</span>
+                </div>
+                <div className="wallet-info">
+                  <div className="wallet-address">{formatAccount(account)}</div>
+                  <div className="wallet-status">Conectado</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="wallet-table-container">
+          <div className="wallet-tabs">
+            <button className={`tab-btn ${activeTab === 'tokens' ? 'active' : ''}`} onClick={() => setActiveTab('tokens')}>
+              <FontAwesomeIcon icon={faCoins} /> Tokens
+            </button>
+            <button className={`tab-btn ${activeTab === 'activity' ? 'active' : ''}`} onClick={() => setActiveTab('activity')}>
+              <FontAwesomeIcon icon={faExchangeAlt} /> Actividad
+            </button>
+          </div>
+
+          <div className="wallet-content">
             {activeTab === 'tokens' ? (
-              <div>
-                {tokens.map((token) => (
-                  <div className="wallet-token-row" key={token.id}>
-                    <div className="wallet-token-left">
-                      <span className="wallet-avatar">
-                        <img
-                          src={token.img}
-                          alt="Propiedad"
-                          style={{ width: '100%', height: '100%', borderRadius: '50%' }}
-                        />
-                      </span>
-                      <div>
-                        <div className="wallet-token-name">{token.name}</div>
-                        <div className="wallet-token-porcentaje">{token.porcentaje} porcentaje de ganancia</div>
+              <>
+                <div className="section-header">
+                  <h3>Tus Propiedades Tokenizadas</h3>
+                  <span className="token-count">{tokens.length} activos</span>
+                </div>
+
+                <div className="tokens-grid">
+                  {tokens.map((token) => (
+                    <div className="token-card" key={token.id}>
+                      <div className="token-image">
+                        <img src={token.img} alt="Propiedad" />
+                      </div>
+                      <div className="token-header">
+                        <h4 className="token-name">{token.name}</h4>
+                        <span className="token-location">ID: {token.id}</span>
+                      </div>
+                      <div className="token-stats">
+                        <div className="stat-item">
+                          <span className="stat-label">Ganancia</span>
+                          <span className="stat-value positive">{token.porcentaje}</span>
+                        </div>
+                        <div className="stat-item">
+                          <span className="stat-label">Valor estimado</span>
+                          <span className="stat-value">${token.usd.toFixed(2)}</span>
+                        </div>
+                      </div>
+                      <div className="token-actions">
+                        <button className="btn-primary">Ver Detalles</button>
+                        <button className="btn-secondary">Transferir</button>
                       </div>
                     </div>
-                    <div className="wallet-token-right">
-                      <div className="wallet-token-usd">USD {token.usd.toFixed(2)}</div>
-                      <div className="wallet-token-accion">{token.accion}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              </>
             ) : (
               <>
-                <div className="wallet-table-header">
-                  <span className="wallet-table-col propiedad">Propiedad</span>
-                  <span className="wallet-table-col precio">Precio</span>
-                  <span className="wallet-table-col tipo">Tipo transacción</span>
-                  <span className="wallet-table-col estado">Estado</span>
+                <div className="section-header">
+                  <h3>Historial de Transacciones</h3>
+                  <span className="activity-count">{properties.length} movimientos</span>
                 </div>
-                {properties.map((prop, idx) => (
-                  <div className="wallet-table-row" key={prop.id}>
-                    <span className="wallet-table-col propiedad">
-                      <span className="wallet-avatar">
-                        <img
-                          src="https://via.placeholder.com/56"
-                          alt="Propiedad"
-                          style={{ width: '100%', height: '100%', borderRadius: '50%' }}
-                        />
-                      </span>
-                      <span>
-                        {prop.name}
-                        <div className="wallet-table-sub">
-                          {prop.id}
-                          <br />
-                          <span className="wallet-table-date">{prop.date}</span>
+
+                <div className="transactions-list">
+                  {properties.map((prop) => (
+                    <div className="transaction-card" key={prop.id}>
+                      <div className="transaction-left">
+                        <div className="transaction-icon">
+                          <img src="https://via.placeholder.com/40" alt="Propiedad" style={{ borderRadius: '8px' }} />
                         </div>
-                      </span>
-                    </span>
-                    <span className="wallet-table-col precio">{prop.price}</span>
-                    <span className="wallet-table-col tipo">{prop.type}</span>
-                    <span className="wallet-table-col estado">{prop.status}</span>
-                  </div>
-                ))}
+                        <div className="transaction-details">
+                          <div className="transaction-title">{prop.name}</div>
+                          <div className="transaction-id">ID: {prop.id}</div>
+                          <div className="transaction-date">{prop.date}</div>
+                        </div>
+                      </div>
+                      <div className="transaction-right">
+                        <div className="transaction-amount">
+                          <span className="amount-price">{prop.price}</span>
+                          <span className="amount-tokens">≈ {parseFloat(prop.price.replace('$', '') / 100).toFixed(0)} tokens</span>
+                        </div>
+                        <div className="transaction-meta">
+                          <span className="transaction-type">{prop.type}</span>
+                          <span className="transaction-status">{prop.status}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </>
             )}
           </div>

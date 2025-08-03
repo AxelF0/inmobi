@@ -195,7 +195,6 @@
 }
 
 .property-location::before {
-    content: "📍";
     font-size: 16px;
 }
 
@@ -272,7 +271,6 @@
 }
 
 .legal-data h3::before {
-    content: "📋";
     font-size: 24px;
 }
 

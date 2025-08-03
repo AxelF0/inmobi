@@ -1,5 +1,8 @@
+// catalogo_inmuebles.js
 import React from 'react';
 import '../styles/catalogo_inmuebles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faBed, faBath, faRulerCombined } from '@fortawesome/free-solid-svg-icons';
 
 const properties = [
     {
@@ -116,9 +119,15 @@ const Marketplace = ({ onPropertySelect }) => {
                             <div className="marketplace-card-title">{prop.title}</div>
                             <div className="marketplace-card-ubicacion">{prop.ubicacion}</div>
                             <div className="marketplace-card-icons">
-                                <span>🏠 {prop.tamano}</span>
-                                <span>🛏️ {prop.habitaciones} Habitaciones</span>
-                                <span>🛁 {prop.banos} Baños</span>
+                                <span className="icon-item">
+                                    <FontAwesomeIcon icon={faRulerCombined} /> {prop.tamano}
+                                </span>
+                                <span className="icon-item">
+                                    <FontAwesomeIcon icon={faBed} /> {prop.habitaciones} Habitaciones
+                                </span>
+                                <span className="icon-item">
+                                    <FontAwesomeIcon icon={faBath} /> {prop.banos} Baños
+                                </span>
                             </div>
                             <div className="marketplace-card-footer">
                                 <span>Precio token</span>

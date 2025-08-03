@@ -1,4 +1,14 @@
+// property_details.js (con Font Awesome)
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faArrowLeft,
+    faHome,
+    faBed,
+    faBath,
+    faCar,
+    faRulerCombined
+} from '@fortawesome/free-solid-svg-icons';
 import '../styles/property_details.css';
 
 const PropertyDetails = ({ property, onBack }) => {
@@ -41,7 +51,7 @@ const PropertyDetails = ({ property, onBack }) => {
         <div className="property-details-container">
             <div className="property-details-header">
                 <button className="back-button" onClick={onBack}>
-                    ← Volver al catálogo
+                    <FontAwesomeIcon icon={faArrowLeft} /> Volver al catálogo
                 </button>
             </div>
 
@@ -67,31 +77,31 @@ const PropertyDetails = ({ property, onBack }) => {
                         <span className="property-type-badge">{property.type}</span>
                         <h1 className="property-title">{property.title}</h1>
                         <p className="property-location">{property.ubicacion}</p>
-                        
+
                         <div className="property-features">
                             <div className="feature-item">
-                                <span className="feature-icon">🏠</span>
+                                <span className="feature-icon"><FontAwesomeIcon icon={faBed} /></span>
                                 <div>
                                     <span className="feature-label">Habitaciones</span>
                                     <span className="feature-value">{property.habitaciones}</span>
                                 </div>
                             </div>
                             <div className="feature-item">
-                                <span className="feature-icon">🛁</span>
+                                <span className="feature-icon"><FontAwesomeIcon icon={faBath} /></span>
                                 <div>
                                     <span className="feature-label">Baños</span>
                                     <span className="feature-value">{property.banos}</span>
                                 </div>
                             </div>
                             <div className="feature-item">
-                                <span className="feature-icon">📐</span>
+                                <span className="feature-icon"><FontAwesomeIcon icon={faCar} /></span>
                                 <div>
                                     <span className="feature-label">Garaje</span>
                                     <span className="feature-value">2</span>
                                 </div>
                             </div>
                             <div className="feature-item">
-                                <span className="feature-icon">🏗️</span>
+                                <span className="feature-icon"><FontAwesomeIcon icon={faRulerCombined} /></span>
                                 <div>
                                     <span className="feature-label">Tamaño</span>
                                     <span className="feature-value">{property.tamano}</span>
@@ -121,7 +131,7 @@ const PropertyDetails = ({ property, onBack }) => {
                     <div className="property-description">
                         <h3>Descripción</h3>
                         <p>{propertyDetails.descripcion}</p>
-                        
+
                         <h4>Características adicionales:</h4>
                         <ul className="characteristics-list">
                             {propertyDetails.caracteristicas.map((caracteristica, index) => (
@@ -134,11 +144,11 @@ const PropertyDetails = ({ property, onBack }) => {
                 <div className="investment-panel">
                     <div className="investment-card">
                         <h2>Recaudado - objetivo</h2>
-                        
+
                         <div className="progress-section">
                             <div className="progress-bar">
-                                <div 
-                                    className="progress-fill" 
+                                <div
+                                    className="progress-fill"
                                     style={{ width: `${propertyDetails.objetivoRecaudado.porcentaje}%` }}
                                 ></div>
                             </div>
@@ -160,23 +170,23 @@ const PropertyDetails = ({ property, onBack }) => {
                         <div className="purchase-form">
                             <div className="input-group">
                                 <label>Cantidad de token</label>
-                                <input 
-                                    type="number" 
+                                <input
+                                    type="number"
                                     placeholder="100"
                                     min="1"
                                     max={propertyDetails.tokenInfo.cantidadDisponible}
                                 />
                             </div>
-                            
+
                             <div className="input-group">
                                 <label>Total a pagar</label>
-                                <input 
-                                    type="text" 
+                                <input
+                                    type="text"
                                     placeholder="$10,000"
                                     readOnly
                                 />
                             </div>
-                            
+
                             <button className="buy-now-btn">
                                 Comprar Ahora
                             </button>

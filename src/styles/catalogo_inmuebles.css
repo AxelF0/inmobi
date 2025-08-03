@@ -195,7 +195,6 @@
 }
 
 .marketplace-card-ubicacion::before {
-    content: "📍";
     font-size: 14px;
 }
 
@@ -247,7 +246,6 @@
     color: var(--accent-color);
 }
 
-/* Efectos de hover adicionales */
 .marketplace-card-title {
     transition: color 0.3s ease;
 }
@@ -256,7 +254,6 @@
     color: var(--primary-color);
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .marketplace-grid {
         grid-template-columns: 1fr;
@@ -322,7 +319,6 @@
     }
 }
 
-/* Animaciones de entrada */
 .marketplace-card {
     animation: fadeInUp 0.6s ease forwards;
 }
